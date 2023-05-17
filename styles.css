@@ -1,0 +1,35 @@
+/*beginning of the reset*/
+  /* Preferred box-sizing value */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  /* Reapply the pointer cursor for anchor tags */
+  a {
+    cursor: revert;
+  }
+  /* Remove list styles (bullets/numbers) */
+  ol, ul, menu {
+    list-style: none;
+  }
+  /* For images to not be able to exceed their container */
+  img {
+    max-width: 100%;
+  }
+  /* fix the feature of 'hidden' attribute.
+  display:revert; revert to element instead of attribute */
+  :where([hidden]){
+    display:none;
+  }
+  /* reset end*/
+
+section {
+    margin: 2em;
+    display: grid;
+    justify-items: center;
+}
+
+p {
+    text-align: justify;
+}
