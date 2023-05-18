@@ -26,11 +26,21 @@ const remove_start_btn = () => {
 };
 
 const add_reset_btn = () => {
-  //add a reset button in place of start
   const reset_btn = document.createElement("button");
   reset_btn.innerHTML = "Reset";
   let section = document.getElementById("buttons_group");
   section.appendChild(reset_btn);
+
+  reset_btn.addEventListener("click", function () {
+    reset_buttons_func(reset_btn, section);
+  });
+};
+
+const reset_buttons_func = (reset_btn, section) => {
+  const begin_again_btn = document.createElement("button");
+  begin_again_btn.innerHTML = "Start again";
+  reset_btn.remove();
+  section.appendChild(begin_again_btn);
 };
 
 start_btn.addEventListener("click", () => {
