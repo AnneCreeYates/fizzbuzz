@@ -37,20 +37,21 @@ const add_reset_btn = () => {
   });
 };
 
-const remove_start_again_btn = () => {
-  // this function is to remove the start again button and put up a reset button insead
-};
-
 const reset_buttons_func = (reset_btn, section) => {
-  const begin_again_btn = document.createElement("button");
-  begin_again_btn.innerHTML = "Start again";
+  const start_again_btn = document.createElement("button");
+  start_again_btn.innerHTML = "Start again";
   reset_btn.remove();
-  section.appendChild(begin_again_btn);
+  section.appendChild(start_again_btn);
+
+  const remove_start_again_btn = (start_again_btn) => {
+    // this function is to remove the start again button and put up a reset button insead
+    start_again_btn.remove();
+  };
 
   //add a function that regenerated the text after pressing start again
-  begin_again_btn.addEventListener("click", () => {
+  start_again_btn.addEventListener("click", () => {
     fizzbuzz_func();
-    // remove_start_again_btn();
+    remove_start_again_btn(start_again_btn);
     add_reset_btn();
   });
 };
