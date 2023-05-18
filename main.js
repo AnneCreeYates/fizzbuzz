@@ -33,6 +33,7 @@ const add_reset_btn = () => {
 
   reset_btn.addEventListener("click", function () {
     reset_buttons_func(reset_btn, section);
+    reset_text_func();
   });
 };
 
@@ -41,6 +42,12 @@ const reset_buttons_func = (reset_btn, section) => {
   begin_again_btn.innerHTML = "Start again";
   reset_btn.remove();
   section.appendChild(begin_again_btn);
+};
+
+const reset_text_func = () => {
+  // this function resets the generated text to none
+  elems = document.getElementsByClassName("generatedText");
+  elems[0].remove();
 };
 
 start_btn.addEventListener("click", () => {
