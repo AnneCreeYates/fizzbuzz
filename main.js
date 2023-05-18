@@ -6,17 +6,25 @@ const fizzbuzz_func = () => {
     let elem = document.createElement("elem");
     if (i % 3 == 0 && i % 5 == 0) {
       elem.textContent = " FizzBuzz, ";
-      elem.style.color = "purple";
+      elem.style.fontFamily = "Henny Penny";
+      elem.style.color = "violet";
+      elem.style.fontSize = "2em";
     } else if (i % 3 == 0) {
       elem.textContent = " Fizz, ";
-      elem.style.color = "blue";
+      elem.style.fontFamily = "Henny Penny";
+      elem.style.color = "green";
+      elem.style.fontSize = "1.5em";
     } else if (i % 5 == 0) {
       if (i == nums) {
         elem.textContent = " Buzz.";
-        elem.style.color = "red";
+        elem.style.fontFamily = "Henny Penny";
+        elem.style.color = "orange";
+        elem.style.fontSize = "1.7em";
       } else {
         elem.textContent = " Buzz, ";
-        elem.style.color = "red";
+        elem.style.fontFamily = "Henny Penny";
+        elem.style.color = "orange";
+        elem.style.fontSize = "1.8em";
       }
     } else {
       elem.textContent = " " + i + ",";
