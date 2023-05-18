@@ -31,10 +31,14 @@ const add_reset_btn = () => {
   let section = document.getElementById("buttons_group");
   section.appendChild(reset_btn);
 
-  reset_btn.addEventListener("click", function () {
+  reset_btn.addEventListener("click", () => {
     reset_buttons_func(reset_btn, section);
     reset_text_func();
   });
+};
+
+const remove_start_again_btn = () => {
+  // this function is to remove the start again button and put up a reset button insead
 };
 
 const reset_buttons_func = (reset_btn, section) => {
@@ -42,12 +46,21 @@ const reset_buttons_func = (reset_btn, section) => {
   begin_again_btn.innerHTML = "Start again";
   reset_btn.remove();
   section.appendChild(begin_again_btn);
+
+  //add a function that regenerated the text after pressing start again
+  begin_again_btn.addEventListener("click", () => {
+    fizzbuzz_func();
+    // remove_start_again_btn();
+    add_reset_btn();
+  });
 };
 
 const reset_text_func = () => {
-  // this function resets the generated text to none
-  elems = document.getElementsByClassName("generatedText");
-  elems[0].remove();
+  // this function removed only the elements from the paga. The paragraf itself remains.
+  para_holding_text = document.getElementsByClassName("generatedText");
+  while (para_holding_text[0].firstChild) {
+    para_holding_text[0].removeChild(para_holding_text[0].firstChild);
+  }
 };
 
 start_btn.addEventListener("click", () => {
@@ -55,5 +68,3 @@ start_btn.addEventListener("click", () => {
   remove_start_btn();
   add_reset_btn();
 });
-
-// make a function adding the pause, stop and reset buttons
