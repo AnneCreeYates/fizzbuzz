@@ -1,40 +1,42 @@
 const start_btn = document.getElementById("start_btn");
+const nums = 100;
 
 const fizzbuzz_func = () => {
-  for (let i = 0; i < 100; i++) {
-    let span = document.createElement("span");
+  for (let i = 0; i < nums; i++) {
+    let elem = document.createElement("elem");
     if ((i + 1) % 3 == 0 && (i + 1) % 5 == 0) {
-      // this part needs to add visualisation for the words in the animation section
-      //   document.getElementsByClassName("generatedText")[0].textContent +=
-      //     " FizzBuzz,";
-      span.textContent = " FizzBuzz, ";
-      span.style.color = "purple";
+      elem.textContent = " FizzBuzz, ";
+      elem.style.color = "purple";
     } else if ((i + 1) % 3 == 0) {
-      // this part needs to add visualisation for the words in the animation section
-      //   document.getElementsByClassName("generatedText")[0].textContent +=
-      //     " Fizz,";
-      span.textContent = " Fizz, ";
-      span.style.color = "blue";
+      elem.textContent = " Fizz, ";
+      elem.style.color = "blue";
     } else if ((i + 1) % 5 == 0) {
-      // this part needs to add visualisation for the words in the animation section
-      //   document.getElementsByClassName("generatedText")[0].textContent +=
-      //     " Buzz,";
-      span.textContent = " Buzz, ";
-      span.style.color = "red";
+      elem.textContent = " Buzz, ";
+      elem.style.color = "red";
     } else {
-      // this part needs to add visualisation for the number in the animation section
-      //   document.getElementsByClassName("generatedText")[0].textContent +=
-      //     " " + (i + 1) + ",";
-      span.textContent = " " + (i + 1) + ",";
-      span.style.color = "black";
+      elem.textContent = " " + (i + 1) + ",";
+      elem.style.color = "black";
     }
-    document.getElementsByClassName("generatedText")[0].appendChild(span);
+    document.getElementsByClassName("generatedText")[0].appendChild(elem);
   }
 };
 
-// make a function removing the start button
+const remove_start_btn = () => {
+  start_btn.remove();
+};
+
+const add_reset_btn = () => {
+  //add a reset button in place of start
+  const reset_btn = document.createElement("button");
+  reset_btn.innerHTML = "Reset";
+  let section = document.getElementById("buttons_group");
+  section.appendChild(reset_btn);
+};
+
+start_btn.addEventListener("click", () => {
+  fizzbuzz_func();
+  remove_start_btn();
+  add_reset_btn();
+});
+
 // make a function adding the pause, stop and reset buttons
-
-// add function for functionality of every button
-
-start_btn.addEventListener("click", fizzbuzz_func);
