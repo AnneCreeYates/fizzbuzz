@@ -40,6 +40,20 @@ body {
   max-width: 700px;
 }
 
+button {
+  padding: 1em;
+  font-family: "Henny Penny", cursive;
+  font-size: 1em;
+  border-radius: 50%;
+  border: 0.2em double;
+  border-inline-width: 1em;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
 img {
   width: 70%;
   display: flex;
