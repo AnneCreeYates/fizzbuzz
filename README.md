@@ -5,8 +5,11 @@ This project is a simple implementation of the classic FizzBuzz game using HTML,
 ## **Technologies Used**
 
 HTML: Used to structure the content of the web page.
+
 CSS: Used to style the web page and make it visually appealing.
+
 JavaScript: Used to add interactivity to the web page and implement the game logic.
+
 In this project, I also made use of CSS Grid and Flexbox to layout the elements on the page. Grid was used to create a two-dimensional layout for the game board, while Flexbox was used to align and distribute space among items in a one-dimensional layout.
 
 ## **How to Play**
